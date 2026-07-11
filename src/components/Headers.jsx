@@ -2,28 +2,28 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, ShieldCheck, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
 
 const services = [
   {
-    title: "Cloud Computing",
-    href: "/services/cloud-computing",
+    title: "infrastructure solutions",
+    href: "/services/infrastructure-solutions",
     description: "Scalable cloud servers, migration, and infrastructure.",
   },
   {
-    title: "IT Security",
-    href: "/services/it-security",
+    title: "cloud solutions",
+    href: "/services/cloud-solutions",
     description: "Managed security and proactive threat protection.",
   },
   {
-    title: "Backup & Recovery",
-    href: "/services/backup-recovery",
+    title: "security solutions",
+    href: "/services/security-solutions",
     description: "Reliable backup, disaster recovery, and continuity.",
   },
   {
     title: "Managed IT Services",
-    href: "/services/managed-it-services",
+    href: "/services/managed-services",
     description: "Complete infrastructure monitoring and IT support.",
   },
 ];

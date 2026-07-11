@@ -1,5 +1,8 @@
+import CloudBenefitsSection from "@/components/cloudBenifit";
 import HeroSection from "@/components/Herosection";
+import HomeFaqSection from "@/components/HomeFaq";
 import LogoMarquee from "@/components/logoMarque";
+import MissionVisionSection from "@/components/Mission";
 import ServicesSection from "@/components/serviceSection";
 import WhoWeAreSection from "@/components/whoWeAre";
 import Image from "next/image";
@@ -11,6 +14,9 @@ export default function Home() {
       <LogoMarquee />
       <ServicesSection />
       <WhoWeAreSection />
+      <CloudBenefitsSection />
+      <MissionVisionSection />
+      <HomeFaqSection />
     </>
   );
 }

@@ -364,10 +364,10 @@ export default function AboutPage() {
       </section>
 
       {/* Core technology areas */}
-      <section className="bg-blue-950 py-20 text-white md:py-28">
+      <section className="py-20 text-black md:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-300">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">
               Secure. Available. Reliable.
             </p>
 
@@ -413,11 +413,11 @@ export default function AboutPage() {
                 key={title}
                 className="rounded-md border border-white/10 bg-white/5 p-7 backdrop-blur-sm transition hover:bg-white/10"
               >
-                <Icon className="text-blue-300" size={28} strokeWidth={1.7} />
+                <Icon className="text-blue-600" size={28} strokeWidth={1.7} />
 
                 <h3 className="mt-5 text-xl font-semibold">{title}</h3>
 
-                <p className="mt-4 leading-7 text-blue-100">{text}</p>
+                <p className="mt-4 leading-7 text-black">{text}</p>
               </article>
             ))}
           </div>
@@ -583,12 +583,12 @@ export default function AboutPage() {
 
       {/* Final CTA */}
       <section className="px-6 py-20">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-md bg-blue-950 px-7 py-14 text-center text-white md:px-12 md:py-20">
+        <div className="relative max-w-full overflow-hidden  py-14 text-center text-black md:px-12 md:py-20">
           <div className="pointer-events-none absolute -left-20 top-0 h-72 w-72 rounded-md bg-blue-500/20 blur-3xl" />
           <div className="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-purple-500/20 blur-3xl" />
 
           <div className="relative mx-auto max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-300">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">
               The Cloud Is in Our DNA
             </p>
 
@@ -596,7 +596,7 @@ export default function AboutPage() {
               Ready to modernize your technology infrastructure?
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-blue-100">
+            <p className="mt-6 text-lg leading-8 text-black">
               Let&apos;s build a secure, scalable, and reliable technology
               environment for your business.
             </p>
@@ -612,7 +612,7 @@ export default function AboutPage() {
 
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center rounded-md border border-white/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/15"
+                className="inline-flex items-center justify-center rounded-md border border-black/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-white/15"
               >
                 Explore Services
               </Link>

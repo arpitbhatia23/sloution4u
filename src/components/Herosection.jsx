@@ -30,7 +30,7 @@ export default function HeroSection() {
         <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
           {/* Left content */}
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+            <div className="inline-flex items-center gap-2 rounded-md border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
               <Zap className="h-4 w-4" />
               Cloud, Security & Managed IT Solutions
             </div>

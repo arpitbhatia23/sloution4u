@@ -9,7 +9,7 @@ import {
 import Image from "next/image";
 export default function Footer() {
   return (
-    <footer className="bg-white text-black">
+    <footer className="bg-white text-black border border-t border-gray-600">
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 lg:grid-cols-5">
           {/* Company */}
@@ -21,7 +21,7 @@ export default function Footer() {
                 width={260}
                 height={80}
                 priority
-                className="w-55 md:w-65 lg:w-45 h-14 object-cover"
+                className="w-35  lg:w-45 h-14 object-cover"
               />
             </Link>
             <p className="mt-6 leading-7 text-black">
@@ -53,10 +53,18 @@ export default function Footer() {
             <h3 className="text-white font-bold text-lg">Services</h3>
 
             <ul className="mt-6 space-y-3">
-              <li>Cloud Computing</li>
-              <li>Cyber Security</li>
-              <li>Backup & Recovery</li>
-              <li>Managed IT</li>
+              <Link href={"/services/cloud-solutions"}>
+                <li>Cloud Computing</li>
+              </Link>
+              <Link href={"/services/security-solutions"}>
+                <li>Cyber Security</li>
+              </Link>
+              <Link href={"/services/infrastructure-solutions"}>
+                <li>Infrastructure Solutions</li>
+              </Link>
+              <Link href={"/services/managed-services"}>
+                <li>Managed IT</li>
+              </Link>
             </ul>
           </div>
 
@@ -73,15 +81,9 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between">
-          <p className="text-sm text-black">
+          <p className="text-sm font-semibold text-black">
             © 2026 Solution4U. All Rights Reserved.
           </p>
-
-          <div className="flex gap-6 text-sm mt-4 md:mt-0">
-            <Link href="/privacy-policy">Privacy Policy</Link>
-            <Link href="/terms">Terms</Link>
-            <Link href="/cookies">Cookies</Link>
-          </div>
         </div>
       </div>
     </footer>
