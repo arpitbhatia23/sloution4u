@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, MessageCircle, X } from "lucide-react";
 import Image from "next/image";
 
 const services = [
@@ -128,12 +128,15 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden lg:block">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-lg bg-blue-700 px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-blue-800"
+          <a
+            href="https://wa.me/919888885456?text=Hi%20Solution4U,%20I'm%20interested%20in%20your%20IT%20services."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#20BA5A]"
           >
-            Get IT Consultation
-          </Link>
+            <MessageCircle className="h-4 w-4" />
+            Chat on WhatsApp
+          </a>
         </div>
 
         {/* Mobile Button */}

@@ -6,7 +6,6 @@ import { NextResponse } from "next/server";
 const handler = async (req) => {
   try {
     const { name, email, phone, message, company, service } = await req.json();
-    console.log(name, email, phone, message, company, service);
     if (!name || !email || !phone || !message || !company || !service) {
       throw new apiError(400, "all fleid are required");
     }
