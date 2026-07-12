@@ -20,7 +20,7 @@ export const metadata = {
   description:
     "Learn about Solution4U, a technology consulting company providing cloud solutions, infrastructure, cybersecurity, managed services, backup, networking, ERP applications, and enterprise IT consulting.",
   alternates: {
-    canonical: "/about",
+    canonical: "https://www.solution4u.co.in/about",
   },
 };
 
@@ -352,6 +352,7 @@ export default function AboutPage() {
 
                 <Link
                   href={href}
+                  aria-label={`Learn more about ${title}`}
                   className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition hover:text-blue-800"
                 >
                   Learn More

@@ -20,7 +20,7 @@ export const metadata = {
     title: "Contact Solution4U | Technology Consulting Chandigarh",
     description:
       "Discuss your cloud, infrastructure, security, managed services, staffing, analytics, or ERP requirements with Solution4U.",
-    url: "/contact",
+    url: "htts://www.solution4u.co.in/contact",
     type: "website",
   },
 };
