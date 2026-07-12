@@ -27,7 +27,7 @@ export default async function sitemap() {
   }));
   const serviceRoutes = Array.isArray(services)
     ? services.map((s) => ({
-        url: `${siteUrl}/${s.slug}`,
+        url: `${baseUrl}/${s.slug}`,
         lastModified: new Date().toISOString(),
       }))
     : [];
