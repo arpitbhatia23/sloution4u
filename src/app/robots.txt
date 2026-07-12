@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.solution4u.co.in/sitemap.xml
