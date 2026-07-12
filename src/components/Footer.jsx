@@ -85,7 +85,7 @@ export default function Footer() {
 
             <ul className="mt-6 space-y-4 text-sm">
               <li>📍 sco-66 1st floor sector 20-c chandigarh</li>
-              <li>📞 +91 XXX XXX XXX</li>
+              <li>📞 +91 98888 85456</li>
               <li>✉ support@solution4u.com</li>
             </ul>
           </div>

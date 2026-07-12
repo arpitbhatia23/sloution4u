@@ -8,13 +8,14 @@ import {
   Phone,
   Send,
 } from "lucide-react";
+import ContactForm from "@/components/contactform";
 
 export const metadata = {
   title: "Contact Solution4U | Cloud & IT Solutions Chandigarh",
   description:
     "Contact Solution4U for cloud services, IT infrastructure, cybersecurity, managed services, ERP solutions, staffing, and enterprise technology consulting in Chandigarh.",
   alternates: {
-    canonical: "/contact",
+    canonical: "https://www.solution4u.co.in/contact",
   },
   openGraph: {
     title: "Contact Solution4U | Technology Consulting Chandigarh",
@@ -172,149 +173,7 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <form
-              action="/api/contact"
-              method="POST"
-              className="mt-8 space-y-5"
-            >
-              <div className="grid gap-5 sm:grid-cols-2">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="text-sm font-medium text-slate-800"
-                  >
-                    Full Name
-                  </label>
-
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    autoComplete="name"
-                    placeholder="Enter your name"
-                    className="mt-2 w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="company"
-                    className="text-sm font-medium text-slate-800"
-                  >
-                    Company Name
-                  </label>
-
-                  <input
-                    id="company"
-                    name="company"
-                    type="text"
-                    autoComplete="organization"
-                    placeholder="Enter company name"
-                    className="mt-2 w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
-                  />
-                </div>
-              </div>
-
-              <div className="grid gap-5 sm:grid-cols-2">
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="text-sm font-medium text-slate-800"
-                  >
-                    Email Address
-                  </label>
-
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    autoComplete="email"
-                    placeholder="name@company.com"
-                    className="mt-2 w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="text-sm font-medium text-slate-800"
-                  >
-                    Phone Number
-                  </label>
-
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    autoComplete="tel"
-                    placeholder="+91"
-                    className="mt-2 w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="service"
-                  className="text-sm font-medium text-slate-800"
-                >
-                  Service Required
-                </label>
-
-                <select
-                  id="service"
-                  name="service"
-                  defaultValue=""
-                  required
-                  className="mt-2 w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
-                >
-                  <option value="" disabled>
-                    Select a service
-                  </option>
-
-                  {serviceOptions.map((service) => (
-                    <option key={service} value={service}>
-                      {service}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="text-sm font-medium text-slate-800"
-                >
-                  Project Details
-                </label>
-
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={6}
-                  placeholder="Tell us about your current setup, challenges, and requirements."
-                  className="mt-2 w-full resize-none rounded-md border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
-                />
-              </div>
-
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <p className="max-w-md text-xs leading-5 text-slate-500">
-                  By submitting this form, you agree that Solution4U may contact
-                  you regarding your enquiry.
-                </p>
-
-                <button
-                  type="submit"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200"
-                >
-                  Send Enquiry
-                  <Send size={16} />
-                </button>
-              </div>
-            </form>
+            <ContactForm serviceOptions={serviceOptions} />
           </div>
 
           {/* Office information */}
