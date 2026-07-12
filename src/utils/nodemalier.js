@@ -15,110 +15,155 @@ export const sendemail = async ({
   phone,
   message,
   service,
-  device,
+  company,
 }) => {
   await transporter.sendMail({
-    from: `"Laptop Doc" <${process.env.SMTP_USER}>`,
+    from: `"solution4u" <${process.env.SMTP_USER}>`,
     to: process.env.RECEIVER_EMAIL,
     subject: `📩 New ${service || "Customer"} Inquiry`,
     html: `
-      <div style="font-family: Arial, Helvetica, sans-serif; background:#f4f4f4; padding:30px;">
-        <div style="max-width:650px; margin:auto; background:#ffffff; border-radius:12px; overflow:hidden; border:1px solid #e5e7eb;">
+<div style="margin:0;padding:40px 0;background:#eef4ff;font-family:Arial,Helvetica,sans-serif;">
 
-          <div style="background:#ea580c; padding:24px;">
-            <h1 style="margin:0; color:#ffffff; font-size:24px;">
-              New Customer Inquiry
-            </h1>
-            <p style="margin:8px 0 0; color:#ffe7d6;">
-              A new enquiry has been submitted from your website.
-            </p>
-          </div>
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+      <td align="center">
 
-          <div style="padding:30px;">
+        <table
+          role="presentation"
+          cellspacing="0"
+          cellpadding="0"
+          border="0"
+          style="width:680px;max-width:680px;background:#ffffff;border-radius:16px;overflow:hidden;border:1px solid #dbeafe;box-shadow:0 10px 35px rgba(15,23,42,.08);"
+        >
 
-            <table style="width:100%; border-collapse:collapse;">
-              <tr>
-                <td style="padding:12px; font-weight:bold; width:180px; background:#f9fafb;">Name</td>
-                <td style="padding:12px;">${name || "-"}</td>
-              </tr>
+          <tr>
+            <td style="background:#1d4ed8;padding:35px 40px;">
+              <div style="font-size:28px;font-weight:700;color:#ffffff;">
+                Solution4U
+              </div>
 
-              <tr>
-                <td style="padding:12px; font-weight:bold; background:#f9fafb;">Email</td>
-                <td style="padding:12px;">
-                  <a href="mailto:${email}" style="color:#ea580c;">
-                    ${email || "-"}
-                  </a>
-                </td>
-              </tr>
+              <div style="margin-top:6px;color:#dbeafe;font-size:15px;">
+                New Customer Enquiry Received
+              </div>
+            </td>
+          </tr>
 
-              <tr>
-                <td style="padding:12px; font-weight:bold; background:#f9fafb;">Phone</td>
-                <td style="padding:12px;">
-                  <a href="tel:${phone}" style="color:#ea580c;">
-                    ${phone || "-"}
-                  </a>
-                </td>
-              </tr>
+          <tr>
+            <td style="padding:30px 40px 10px;">
+              <div style="background:#eff6ff;border-left:5px solid #2563eb;padding:18px;border-radius:10px;">
+                <div style="font-size:18px;font-weight:700;color:#111827;">
+                  New website enquiry
+                </div>
 
-              <tr>
-                <td style="padding:12px; font-weight:bold; background:#f9fafb;">Service</td>
-                <td style="padding:12px;">${service || "-"}</td>
-              </tr>
+                <div style="margin-top:8px;color:#4b5563;line-height:1.7;">
+                  A potential customer has contacted Solution4U through the website.
+                  Review the enquiry details below and respond promptly.
+                </div>
+              </div>
+            </td>
+          </tr>
 
-              <tr>
-                <td style="padding:12px; font-weight:bold; background:#f9fafb;">Device</td>
-                <td style="padding:12px;">${device || "-"}</td>
-              </tr>
-            </table>
+          <tr>
+            <td style="padding:20px 40px;">
+              <div style="font-size:18px;font-weight:700;color:#111827;margin-bottom:18px;">
+                Customer Information
+              </div>
 
-            <div style="margin-top:28px;">
-              <h3 style="margin-bottom:10px; color:#111827;">
+              <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+                <tr>
+                  <td style="padding:14px;background:#f8fafc;width:180px;font-weight:bold;color:#374151;border:1px solid #e5e7eb;">
+                    Full Name
+                  </td>
+                  <td style="padding:14px;border:1px solid #e5e7eb;color:#111827;">
+                    ${name || "-"}
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding:14px;background:#f8fafc;font-weight:bold;color:#374151;border:1px solid #e5e7eb;">
+                    Email Address
+                  </td>
+                  <td style="padding:14px;border:1px solid #e5e7eb;">
+                    <a href="mailto:${email}" style="color:#2563eb;text-decoration:none;">
+                      ${email || "-"}
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding:14px;background:#f8fafc;font-weight:bold;color:#374151;border:1px solid #e5e7eb;">
+                    Phone Number
+                  </td>
+                  <td style="padding:14px;border:1px solid #e5e7eb;">
+                    <a href="tel:${phone}" style="color:#2563eb;text-decoration:none;">
+                      ${phone || "-"}
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding:14px;background:#f8fafc;font-weight:bold;color:#374151;border:1px solid #e5e7eb;">
+                    Requested Service
+                  </td>
+                  <td style="padding:14px;border:1px solid #e5e7eb;color:#111827;">
+                    ${service || "-"}
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding:14px;background:#f8fafc;font-weight:bold;color:#374151;border:1px solid #e5e7eb;">
+                    Company
+                  </td>
+                  <td style="padding:14px;border:1px solid #e5e7eb;color:#111827;">
+                    ${company || "-"}
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:0 40px 10px;">
+              <div style="font-size:18px;font-weight:700;color:#111827;margin-bottom:15px;">
                 Customer Message
-              </h3>
+              </div>
 
-              <div style="
-                background:#f9fafb;
-                border-left:4px solid #ea580c;
-                padding:18px;
-                border-radius:6px;
-                white-space:pre-line;
-                color:#374151;
-              ">
+              <div style="background:#f8fbff;border:1px solid #dbeafe;border-left:5px solid #2563eb;border-radius:12px;padding:22px;color:#374151;line-height:1.8;white-space:pre-line;">
                 ${message || "No message provided."}
               </div>
-            </div>
+            </td>
+          </tr>
 
-            <div style="margin-top:32px; text-align:center;">
+          <tr>
+            <td align="center" style="padding:35px;">
               <a
                 href="mailto:${email}"
-                style="
-                  display:inline-block;
-                  padding:12px 24px;
-                  background:#ea580c;
-                  color:#ffffff;
-                  text-decoration:none;
-                  border-radius:8px;
-                  font-weight:bold;
-                "
+                style="display:inline-block;background:#2563eb;color:#ffffff;text-decoration:none;font-weight:700;font-size:15px;padding:15px 34px;border-radius:10px;"
               >
                 Reply to Customer
               </a>
-            </div>
+            </td>
+          </tr>
 
-          </div>
+          <tr>
+            <td style="background:#f8fafc;border-top:1px solid #e5e7eb;padding:28px;text-align:center;">
+              <div style="color:#111827;font-weight:700;font-size:16px;">
+                Solution4U
+              </div>
 
-          <div style="
-            background:#f9fafb;
-            padding:18px;
-            text-align:center;
-            color:#6b7280;
-            font-size:13px;
-          ">
-            This enquiry was submitted through the <strong>Laptop Doc</strong> website contact form.
-          </div>
+              <div style="margin-top:8px;color:#6b7280;font-size:14px;line-height:1.7;">
+                This notification was automatically generated from the
+                Solution4U website contact form.
+              </div>
+            </td>
+          </tr>
 
-        </div>
-      </div>
-    `,
+        </table>
+      </td>
+    </tr>
+  </table>
+
+</div>
+`,
   });
 };
