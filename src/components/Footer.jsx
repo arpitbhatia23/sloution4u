@@ -53,18 +53,29 @@ export default function Footer() {
             <h3 className="text-white font-bold text-lg">Services</h3>
 
             <ul className="mt-6 space-y-3">
-              <Link href={"/services/cloud-solutions"}>
-                <li>Cloud Computing</li>
-              </Link>
+              
+                <li>
+                  <Link href={"/services/cloud-solutions"}>
+                  Cloud Computing
+                  </Link>
+                  </li>
+              
+                <li>
               <Link href={"/services/security-solutions"}>
-                <li>Cyber Security</li>
+                  Cyber Security
               </Link>
+                  </li>
+
+                <li>
               <Link href={"/services/infrastructure-solutions"}>
-                <li>Infrastructure Solutions</li>
+                  Infrastructure Solutions
               </Link>
+                  </li>
+                <li>
               <Link href={"/services/managed-services"}>
-                <li>Managed IT</li>
+                  Managed IT
               </Link>
+                  </li>
             </ul>
           </div>
 
