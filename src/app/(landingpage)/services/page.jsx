@@ -16,11 +16,11 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "IT Services, Cloud & Infrastructure Solutions | Solution4U",
+  title: "Services| Solution4U",
   description:
     "Explore Solution4U services including IT infrastructure, cloud solutions, managed services, cybersecurity, staffing, AMC, business analytics, ERP and enterprise applications.",
   alternates: {
-    canonical: "/services",
+    canonical: "https://www.sloution4u.co.in/services",
   },
   openGraph: {
     title: "Enterprise IT Services & Cloud Solutions | Solution4U",
@@ -289,7 +289,7 @@ export default function ServicesPage() {
                       <Icon size={27} strokeWidth={1.8} />
                     </div>
 
-                    <span className="text-5xl font-bold text-slate-100 transition group-hover:text-blue-50">
+                    <span className="text-5xl font-bold text-black transition">
                       0{services.findIndex((item) => item.title === title) + 1}
                     </span>
                   </div>
@@ -316,6 +316,7 @@ export default function ServicesPage() {
 
                   <Link
                     href={href}
+                      aria-label={`Learn more about ${title}`}
                     className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition group-hover:gap-3 group-hover:text-blue-800"
                   >
                     Learn More
