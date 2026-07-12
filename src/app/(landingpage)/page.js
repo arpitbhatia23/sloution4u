@@ -5,7 +5,6 @@ import LogoMarquee from "@/components/logoMarque";
 import MissionVisionSection from "@/components/Mission";
 import ServicesSection from "@/components/serviceSection";
 import WhoWeAreSection from "@/components/whoWeAre";
-import Image from "next/image";
 
 export default function Home() {
   return (
