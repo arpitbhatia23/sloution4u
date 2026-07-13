@@ -31,14 +31,14 @@ const contactDetails = [
     title: "Visit Our Office",
     description: "SCO 66, 1st Floor, Sector 20-C, Chandigarh",
     icon: MapPin,
-    href: "https://www.google.com/maps/search/?api=1&query=SCO+66+1st+Floor+Sector+20-C+Chandigarh",
+    href: "https://maps.google.com/?q=Solution4U+SCO+66+1st+Floor+Sector+20-C+Chandigarh",
     label: "Get Directions",
   },
   {
     title: "Call Our Team",
     description: "Add your official business phone number",
     icon: Phone,
-    href: "tel:+910000000000",
+    href: "tel:+91 9888885456",
     label: "Call Now",
   },
   {
