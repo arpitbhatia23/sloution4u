@@ -111,7 +111,7 @@ export default function ServicesSection() {
                 {description}
               </p>
 
-              <button className="mt-6 text-sm font-semibold text-blue-600 transition hover:text-blue-800 px-2">
+              <button className="mt-6 text-sm font-semibold text-blue-600 transition hover:text-blue-800 px-2 py-4">
                 Learn more →
               </button>
             </article>
