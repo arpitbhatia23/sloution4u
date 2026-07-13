@@ -21,7 +21,7 @@ export function GlobeDemo() {
     // Blue glow from the globe surface
     emissive: "#0B3B8C",
     emissiveIntensity: 0.18,
-    shininess: 0.8,
+    shininess: 1,
 
     // White-blue country outlines
     polygonColor: "rgba(255, 255, 255, 0.9)",
@@ -29,7 +29,7 @@ export function GlobeDemo() {
     // Scene lighting
     ambientLight: "#93C5FD",
     directionalLeftLight: "#FFFFFF",
-    directionalTopLight: "#C4B5FD",
+    directionalTopLight: "#FFFFFF",
     pointLight: "#F9A8D4",
 
     arcTime: 1200,
