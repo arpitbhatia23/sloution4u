@@ -104,20 +104,18 @@ export default function ServicesSection() {
                 />
               </div>
 
-              <h3 className="mt-6 text-xl font-semibold text-slate-950 px-2">
+              <h3 className="mt-6 text-xl font-semibold text-slate-950 px-4">
                 {title}
               </h3>
 
-              <p className="mt-3 leading-7 text-slate-600 px-2">
+              <p className="mt-3 leading-7 text-slate-600 px-4">
                 {description}
               </p>
 
-              <Link
-                href={href}
-                aria-label={`${title} link`}
-                className="mt-6 text-sm font-semibold text-blue-600 transition hover:text-blue-800 px-2 py-4"
-              >
-                Learn more →
+              <Link href={href} aria-label={`${title} link`}>
+                <button className="mt-6 text-sm font-semibold text-blue-600 transition hover:text-blue-800 px-4 py-4">
+                  Learn more →
+                </button>
               </Link>
             </article>
           ))}
