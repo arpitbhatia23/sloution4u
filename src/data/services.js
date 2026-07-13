@@ -19,7 +19,7 @@ export const services = [
       "Solution4U delivers enterprise infrastructure solutions designed for performance, reliability, scalability, and long-term business growth.",
     overview:
       "Modern businesses depend on secure and reliable technology infrastructure. We help organizations design, implement, and manage servers, storage, networking, virtualization, and data-centre environments aligned with their operational requirements.",
-    icon: Server,
+    image: "/services/infra.png",
     features: [
       "Enterprise servers and storage",
       "Network infrastructure design",
@@ -72,7 +72,7 @@ export const services = [
       "Accelerate digital transformation with cloud infrastructure, migration, backup, disaster recovery, and hybrid cloud solutions.",
     overview:
       "Cloud computing helps businesses scale resources, reduce hardware costs, improve availability, and launch applications faster. Solution4U helps organizations plan, migrate, secure, and manage cloud environments based on their performance and operational requirements.",
-    icon: Cloud,
+    image: "/services/cloud.png",
     features: [
       "Public cloud solutions",
       "Private cloud environments",
@@ -125,7 +125,7 @@ export const services = [
       "Keep your infrastructure secure, available, and optimized through proactive monitoring, maintenance, and technical support.",
     overview:
       "Our managed services help businesses reduce operational risk and maintain reliable technology environments. We monitor systems, address issues, optimize performance, manage updates, and provide ongoing technical support.",
-    icon: Activity,
+    image: "/services/managed.png",
     features: [
       "Infrastructure monitoring",
       "Server management",
@@ -178,7 +178,7 @@ export const services = [
       "Strengthen your technology team with experienced IT professionals for contract, permanent, and project-based requirements.",
     overview:
       "Solution4U helps businesses find skilled technology professionals for short-term projects, contract assignments, and long-term roles. Our staffing approach focuses on technical capabilities, business requirements, and team compatibility.",
-    icon: Users,
+    image: "/services/staffing.png",
     features: [
       "Contract staffing",
       "Permanent hiring",
@@ -231,7 +231,7 @@ export const services = [
       "Protect your technology investment with preventive maintenance, system health checks, priority support, and ongoing assistance.",
     overview:
       "Our annual maintenance contract services help businesses maintain hardware, software, servers, networks, and technology infrastructure throughout the year. Regular maintenance reduces failures, improves reliability, and provides access to priority support.",
-    icon: Wrench,
+    image: "/services/anual.png",
     features: [
       "Preventive maintenance",
       "Hardware support",
@@ -284,7 +284,7 @@ export const services = [
       "Transform business information into actionable insights through dashboards, reporting, forecasting, and analytics solutions.",
     overview:
       "Business analytics helps organizations understand performance, identify trends, improve planning, and make informed decisions. Solution4U develops reporting and analytics solutions that convert complex data into clear business insights.",
-    icon: BarChart3,
+    image: "/services/business.png",
     features: [
       "Business intelligence dashboards",
       "Data visualization",
@@ -337,7 +337,7 @@ export const services = [
       "Strengthen your technology environment with enterprise cybersecurity, access control, endpoint protection, and threat management.",
     overview:
       "Security is essential to every reliable technology environment. Solution4U helps organizations protect networks, endpoints, systems, applications, and critical business data through layered security controls and proactive monitoring.",
-    icon: ShieldCheck,
+    image: "/services/security.png",
     features: [
       "Network security",
       "Endpoint protection",
@@ -390,7 +390,7 @@ export const services = [
       "Streamline operations with ERP and business applications that improve automation, collaboration, efficiency, and control.",
     overview:
       "Customized ERP systems and business applications help organizations centralize information, automate workflows, reduce manual work, and improve operational visibility. Solution4U designs applications around your processes and business requirements.",
-    icon: Workflow,
+    image: "/services/erp.png",
     features: [
       "Custom ERP development",
       "Workflow automation",

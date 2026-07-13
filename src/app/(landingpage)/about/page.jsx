@@ -14,6 +14,7 @@ import {
   Users,
   Wrench,
 } from "lucide-react";
+import Image from "next/image";
 
 export const metadata = {
   title: "About Us | Solution4U",
@@ -54,59 +55,118 @@ const values = [
 const services = [
   {
     title: "Infrastructure Solutions",
+    shortTitle: "Infrastructure",
     description:
-      "Enterprise servers, storage, virtualization, and infrastructure designed for reliability and growth.",
-    icon: Server,
+      "Build a reliable technology foundation with enterprise servers, storage, networking, virtualization and scalable infrastructure.",
+    image: "/services/infra.png",
     href: "/services/infrastructure-solutions",
+    features: [
+      "Enterprise servers and storage",
+      "Network infrastructure",
+      "Virtualization solutions",
+      "Data centre architecture",
+    ],
+    accent: "from-blue-600 to-cyan-500",
   },
   {
     title: "Cloud Solutions",
+    shortTitle: "Cloud",
     description:
-      "Secure and scalable cloud environments for modern workloads, applications, backup, and business operations.",
-    icon: Cloud,
+      "Modernize your IT environment with scalable cloud infrastructure, migration, backup and hybrid cloud solutions.",
+    image: "/services/cloud.png",
     href: "/services/cloud-solutions",
+    features: [
+      "Public and private cloud",
+      "Cloud migration",
+      "Hybrid cloud architecture",
+      "Cloud backup and recovery",
+    ],
+    accent: "from-indigo-600 to-blue-500",
   },
   {
     title: "Managed Services",
+    shortTitle: "Managed Services",
     description:
-      "Proactive monitoring, maintenance, optimization, and ongoing technical support for your IT environment.",
-    icon: Activity,
+      "Keep your systems secure, available and optimized through proactive monitoring, maintenance and technical support.",
+    image: "/services/managed.png",
     href: "/services/managed-services",
+    features: [
+      "24×7 infrastructure monitoring",
+      "Performance optimization",
+      "Patch and system maintenance",
+      "Incident support",
+    ],
+    accent: "from-violet-600 to-indigo-500",
   },
   {
     title: "Staffing Solutions",
+    shortTitle: "Staffing",
     description:
-      "Flexible technology staffing and experienced IT professionals for short-term and long-term business needs.",
-    icon: Users,
+      "Strengthen your technology team with skilled IT professionals for permanent, contract and project-based requirements.",
+    image: "/services/staffing.png",
     href: "/services/staffing-solutions",
+    features: [
+      "Contract staffing",
+      "Permanent recruitment",
+      "Project-based resources",
+      "Technical talent sourcing",
+    ],
+    accent: "from-purple-600 to-pink-500",
   },
   {
     title: "Annual Maintenance Contract",
+    shortTitle: "AMC",
     description:
-      "Preventive maintenance, system health checks, hardware support, and priority technical assistance.",
-    icon: Wrench,
+      "Protect your technology investment with preventive maintenance, priority support and ongoing system health checks.",
+    image: "/services/anual.png",
     href: "/services/annual-maintenance-contract",
+    features: [
+      "Preventive maintenance",
+      "Hardware and software support",
+      "Priority issue resolution",
+      "Scheduled system health checks",
+    ],
+    accent: "from-sky-600 to-blue-500",
   },
   {
     title: "Business Analytics",
+    shortTitle: "Business Analytics",
     description:
-      "Actionable insights, reporting, dashboards, and analytics tools for better business decision-making.",
-    icon: BarChart3,
+      "Convert business data into useful insights with dashboards, reporting, forecasting and analytics solutions.",
+    image: "/services/business.png",
     href: "/services/business-analytics",
+    features: [
+      "Interactive dashboards",
+      "Business intelligence",
+      "Reporting automation",
+      "Data-driven insights",
+    ],
+    accent: "from-cyan-600 to-teal-500",
   },
   {
     title: "Security Solutions",
+    shortTitle: "Security",
     description:
-      "Network security, endpoint protection, threat management, data protection, and secure infrastructure.",
-    icon: ShieldCheck,
+      "Protect your infrastructure, endpoints, applications and data through enterprise-grade cybersecurity solutions.",
+    image: "/services/security.png",
     href: "/services/security-solutions",
+    features: [
+      "Network security",
+      "Endpoint protection",
+      "Access control",
+      "Threat monitoring",
+    ],
+    accent: "from-blue-700 to-violet-600",
   },
   {
     title: "ERP & Business Applications",
+    shortTitle: "ERP Applications",
     description:
-      "Customized ERP and business applications that improve automation, efficiency, and operational control.",
-    icon: Network,
+      "Streamline operations with customized ERP and business applications that improve automation, efficiency and control.",
+    image: "/services/erp.png",
     href: "/services/erp-business-applications",
+
+    accent: "from-fuchsia-600 to-purple-600",
   },
 ];
 
@@ -156,10 +216,18 @@ export default function AboutPage() {
   return (
     <main className="overflow-hidden bg-white text-slate-950">
       {/* Hero */}
-      <section className="relative overflow-hidden text-black md:py-32">
+      <section className="relative overflow-hidden text-white md:py-32">
+        <Image
+          src="/services/hero.png"
+          alt="LaptopDoc - Best laptop repair shop in Tricity Chandigarh"
+          fill
+          priority
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/25" />
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="max-w-4xl">
-            <p className="text-lg font-semibold uppercase tracking-[0.35em] text-blue-600">
+            <p className="text-lg font-semibold uppercase tracking-[0.35em] text-white">
               About Solution4U
             </p>
 
@@ -167,7 +235,7 @@ export default function AboutPage() {
               Building secure, scalable and reliable technology solutions
             </h1>
 
-            <p className="mt-7 max-w-3xl text-lg leading-8 text-black md:text-xl">
+            <p className="mt-7 max-w-3xl text-sm leading-normal text-white md:text-xl">
               Solution4U helps businesses modernize their infrastructure with
               cloud computing, cybersecurity, managed services, networking,
               enterprise applications, and dependable technology consulting.
@@ -184,7 +252,7 @@ export default function AboutPage() {
 
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center rounded-md border border-black/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-blue-600 backdrop-blur-sm transition hover:bg-white/15"
+                className="inline-flex items-center justify-center rounded-md border border-black/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/15"
               >
                 Explore Our Services
               </Link>
@@ -229,9 +297,9 @@ export default function AboutPage() {
                 key={title}
                 className="group rounded-md border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-md bg-blue-100 text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white">
+                {/* <div className="flex h-12 w-12 items-center justify-center rounded-md bg-blue-100 text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white">
                   <Icon size={23} strokeWidth={1.8} />
-                </div>
+                </div> */}
 
                 <h3 className="mt-5 text-lg font-semibold">{title}</h3>
 
@@ -334,32 +402,65 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {services.map(({ title, description, icon: Icon, href }) => (
-              <article
-                key={title}
-                className="group flex h-full flex-col rounded-md border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-md bg-blue-100 text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white">
-                  <Icon size={23} strokeWidth={1.8} />
-                </div>
-
-                <h3 className="mt-5 text-lg font-semibold">{title}</h3>
-
-                <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">
-                  {description}
-                </p>
-
-                <Link
-                  href={href}
-                  aria-label={`Learn more about ${title}`}
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition hover:text-blue-800"
+          <div className="mt-14 grid gap-7 md:grid-cols-2">
+            {services.map(
+              (
+                { title, description, image, href, features, accent },
+                index,
+              ) => (
+                <article
+                  key={title}
+                  className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
                 >
-                  Learn More
-                  <ArrowRight size={16} />
-                </Link>
-              </article>
-            ))}
+                  {/* Top accent */}
+
+                  {/* Service image */}
+                  <div className="relative aspect-video w-full overflow-hidden bg-slate-100">
+                    {image ? (
+                      <Image
+                        src={image}
+                        alt={`${title} service`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center text-sm text-slate-500">
+                        Image unavailable
+                      </div>
+                    )}
+
+                    {/* Image overlay */}
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-950/40 via-transparent to-transparent" />
+
+                    {/* Service number */}
+                    <span className="absolute right-5 top-5 rounded-md bg-white/90 px-3 py-1.5 text-sm font-bold text-slate-950 shadow-sm backdrop-blur">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+
+                  {/* Card content */}
+                  <div className="flex flex-1 flex-col p-6 md:p-7">
+                    <h3 className="text-2xl font-bold text-slate-950">
+                      {title}
+                    </h3>
+
+                    <p className="mt-3 leading-7 text-slate-600">
+                      {description}
+                    </p>
+
+                    <Link
+                      href={href}
+                      aria-label={`Learn more about ${title}`}
+                      className="mt-auto inline-flex items-center gap-2 pt-7 text-sm font-semibold text-blue-600 transition-all group-hover:gap-3 group-hover:text-blue-800"
+                    >
+                      Learn more about {title}
+                      <ArrowRight size={17} />
+                    </Link>
+                  </div>
+                </article>
+              ),
+            )}
           </div>
         </div>
       </section>

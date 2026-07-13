@@ -14,6 +14,7 @@ import {
   Wrench,
   Workflow,
 } from "lucide-react";
+import Image from "next/image";
 
 export const metadata = {
   title: "Services| Solution4U",
@@ -37,7 +38,7 @@ const services = [
     shortTitle: "Infrastructure",
     description:
       "Build a reliable technology foundation with enterprise servers, storage, networking, virtualization and scalable infrastructure.",
-    icon: Server,
+    image: "/services/infra.png",
     href: "/services/infrastructure-solutions",
     features: [
       "Enterprise servers and storage",
@@ -52,7 +53,7 @@ const services = [
     shortTitle: "Cloud",
     description:
       "Modernize your IT environment with scalable cloud infrastructure, migration, backup and hybrid cloud solutions.",
-    icon: Cloud,
+    image: "/services/cloud.png",
     href: "/services/cloud-solutions",
     features: [
       "Public and private cloud",
@@ -67,7 +68,7 @@ const services = [
     shortTitle: "Managed Services",
     description:
       "Keep your systems secure, available and optimized through proactive monitoring, maintenance and technical support.",
-    icon: Activity,
+    image: "/services/managed.png",
     href: "/services/managed-services",
     features: [
       "24×7 infrastructure monitoring",
@@ -82,7 +83,7 @@ const services = [
     shortTitle: "Staffing",
     description:
       "Strengthen your technology team with skilled IT professionals for permanent, contract and project-based requirements.",
-    icon: Users,
+    image: "/services/staffing.png",
     href: "/services/staffing-solutions",
     features: [
       "Contract staffing",
@@ -97,7 +98,7 @@ const services = [
     shortTitle: "AMC",
     description:
       "Protect your technology investment with preventive maintenance, priority support and ongoing system health checks.",
-    icon: Wrench,
+    image: "/services/anual.png",
     href: "/services/annual-maintenance-contract",
     features: [
       "Preventive maintenance",
@@ -112,7 +113,7 @@ const services = [
     shortTitle: "Business Analytics",
     description:
       "Convert business data into useful insights with dashboards, reporting, forecasting and analytics solutions.",
-    icon: BarChart3,
+    image: "/services/business.png",
     href: "/services/business-analytics",
     features: [
       "Interactive dashboards",
@@ -127,7 +128,7 @@ const services = [
     shortTitle: "Security",
     description:
       "Protect your infrastructure, endpoints, applications and data through enterprise-grade cybersecurity solutions.",
-    icon: ShieldCheck,
+    image: "/services/security.png",
     href: "/services/security-solutions",
     features: [
       "Network security",
@@ -142,7 +143,7 @@ const services = [
     shortTitle: "ERP Applications",
     description:
       "Streamline operations with customized ERP and business applications that improve automation, efficiency and control.",
-    icon: Workflow,
+    image: "/services/erp.png",
     href: "/services/erp-business-applications",
     features: [
       "Custom ERP solutions",
@@ -212,10 +213,19 @@ export default function ServicesPage() {
   return (
     <main className="overflow-hidden bg-white text-slate-950">
       {/* Hero */}
-      <section className="relative overflow-hidden  text-black md:py-32">
+
+      <section className="relative overflow-hidden  text-white md:py-32">
+        <Image
+          src="/services/hero.png"
+          alt="LaptopDoc - Best laptop repair shop in Tricity Chandigarh"
+          fill
+          priority
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/25" />
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="max-w-4xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-blue-600">
+            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-white">
               Products & Services
             </p>
 
@@ -223,7 +233,7 @@ export default function ServicesPage() {
               Technology solutions built for performance, security and growth
             </h1>
 
-            <p className="mt-7 max-w-3xl text-lg leading-8 text-black md:text-xl">
+            <p className="mt-7 max-w-3xl text-sm leading-normal text-white md:text-xl">
               From enterprise infrastructure and cloud computing to
               cybersecurity, managed services, analytics and ERP applications,
               Solution4U helps businesses modernize technology with confidence.
@@ -240,7 +250,7 @@ export default function ServicesPage() {
 
               <a
                 href="#services"
-                className="inline-flex items-center justify-center rounded-md border border-black/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-black backdrop-blur-sm transition hover:bg-white/15"
+                className="inline-flex items-center justify-center rounded-md border border-black/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/15"
               >
                 Explore Services
               </a>
@@ -273,55 +283,78 @@ export default function ServicesPage() {
 
           <div className="mt-14 grid gap-7 md:grid-cols-2">
             {services.map(
-              ({ title, description, icon: Icon, href, features, accent }) => (
+              (
+                { title, description, image, href, features, accent },
+                index,
+              ) => (
                 <article
                   key={title}
-                  className="group relative overflow-hidden rounded-md border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-2xl md:p-8"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
                 >
+                  {/* Top accent */}
                   <div
-                    className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r ${accent}`}
+                    className={`absolute inset-x-0 top-0 z-20 h-1 bg-linear-to-r ${accent}`}
                   />
 
-                  <div className="flex items-start justify-between gap-5">
-                    <div
-                      className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-md bg-linear-to-br ${accent} text-white shadow-lg`}
-                    >
-                      <Icon size={27} strokeWidth={1.8} />
-                    </div>
+                  {/* Service image */}
+                  <div className="relative aspect-video w-full overflow-hidden bg-slate-100">
+                    {image ? (
+                      <Image
+                        src={image}
+                        alt={`${title} service`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center text-sm text-slate-500">
+                        Image unavailable
+                      </div>
+                    )}
 
-                    <span className="text-5xl font-bold text-black transition">
-                      0{services.findIndex((item) => item.title === title) + 1}
+                    {/* Image overlay */}
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-950/40 via-transparent to-transparent" />
+
+                    {/* Service number */}
+                    <span className="absolute right-5 top-5 rounded-md bg-white/90 px-3 py-1.5 text-sm font-bold text-slate-950 shadow-sm backdrop-blur">
+                      {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
 
-                  <h3 className="mt-7 text-2xl font-bold text-slate-950">
-                    {title}
-                  </h3>
+                  {/* Card content */}
+                  <div className="flex flex-1 flex-col p-6 md:p-7">
+                    <h3 className="text-2xl font-bold text-slate-950">
+                      {title}
+                    </h3>
 
-                  <p className="mt-4 leading-7 text-slate-600">{description}</p>
+                    <p className="mt-3 leading-7 text-slate-600">
+                      {description}
+                    </p>
 
-                  <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-                    {features.map((feature) => (
-                      <li
-                        key={feature}
-                        className="flex items-start gap-2 text-sm leading-6 text-slate-700"
-                      >
-                        <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
-                          <Check size={12} strokeWidth={2.5} />
-                        </span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                    <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                      {features.map((feature) => (
+                        <li
+                          key={feature}
+                          className="flex items-start gap-2 text-sm leading-6 text-slate-700"
+                        >
+                          <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+                            <Check size={12} strokeWidth={2.5} />
+                          </span>
 
-                  <Link
-                    href={href}
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Link
+                      href={href}
                       aria-label={`Learn more about ${title}`}
-                    className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition group-hover:gap-3 group-hover:text-blue-800"
-                  >
-                    Learn More
-                    <ArrowRight size={17} />
-                  </Link>
+                      className="mt-auto inline-flex items-center gap-2 pt-7 text-sm font-semibold text-blue-600 transition-all group-hover:gap-3 group-hover:text-blue-800"
+                    >
+                      Learn more about {title}
+                      <ArrowRight size={17} />
+                    </Link>
+                  </div>
                 </article>
               ),
             )}

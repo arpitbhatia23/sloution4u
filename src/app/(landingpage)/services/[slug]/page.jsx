@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Check, ChevronRight } from "lucide-react";
 
 import { getServiceBySlug, services } from "@/data/services";
+import Image from "next/image";
 
 export function generateStaticParams() {
   return services.map((service) => ({
@@ -47,7 +48,7 @@ export default async function ServiceDetailsPage({ params }) {
     notFound();
   }
 
-  const Icon = service.icon;
+  const image = service.image;
 
   const relatedServices = services
     .filter((item) => item.slug !== service.slug)
@@ -56,14 +57,22 @@ export default async function ServiceDetailsPage({ params }) {
   return (
     <main className="overflow-hidden bg-white text-slate-950">
       {/* Hero */}
-      <section className="relative overflow-hidden  py-20 text-black md:py-28">
+      <section className="relative overflow-hidden  py-20 text-white md:py-28">
+        <Image
+          src={image}
+          alt="LaptopDoc - Best laptop repair shop in Tricity Chandigarh"
+          fill
+          priority
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/25" />
         <div className="pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl" />
         <div className="pointer-events-none absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-purple-500/20 blur-3xl" />
 
         <div className="relative mx-auto max-w-7xl px-6">
           <nav
             aria-label="Breadcrumb"
-            className="flex flex-wrap items-center gap-2 text-sm text-blue-600"
+            className="flex flex-wrap items-center gap-2 text-sm text-white"
           >
             <Link href="/" className="transition hover:text-white">
               Home
@@ -77,12 +86,12 @@ export default async function ServiceDetailsPage({ params }) {
 
             <ChevronRight size={15} />
 
-            <span className="text-black">{service.shortTitle}</span>
+            <span className="text-white">{service.shortTitle}</span>
           </nav>
 
           <div className="mt-12 grid items-center gap-12 lg:grid-cols-[1fr_0.7fr]">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white">
                 Solution4U Services
               </p>
 
@@ -90,11 +99,11 @@ export default async function ServiceDetailsPage({ params }) {
                 {service.title}
               </h1>
 
-              <p className="mt-5 max-w-3xl text-xl font-medium text-black">
+              <p className="mt-5 max-w-3xl text-xl font-medium text-white">
                 {service.tagline}
               </p>
 
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-black">
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-white">
                 {service.description}
               </p>
 
@@ -109,7 +118,7 @@ export default async function ServiceDetailsPage({ params }) {
 
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center gap-2 rounded-md border border-black/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-white/15"
+                  className="inline-flex items-center justify-center gap-2 rounded-md border border-black/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/15"
                 >
                   <ArrowLeft size={17} />
                   All Services
@@ -253,28 +262,35 @@ export default async function ServiceDetailsPage({ params }) {
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {relatedServices.map((item) => {
-              const RelatedIcon = item.icon;
+              const img = item.image;
 
               return (
                 <article
                   key={item.slug}
-                  className="group rounded-md border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
+                  className="group rounded-md border border-slate-200 bg-white  shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
                 >
                   <div
-                    className={`flex h-12 w-12 items-center justify-center rounded-md bg-linear-to-br ${item.accent} text-white`}
+                    className={`flex  items-center justify-center   text-white`}
                   >
-                    <RelatedIcon size={23} strokeWidth={1.8} />
+                    <Image
+                      src={img}
+                      height={500}
+                      width={500}
+                      alt={`${item.title} image`}
+                    />
                   </div>
 
-                  <h3 className="mt-6 text-xl font-semibold">{item.title}</h3>
+                  <h3 className="mt-6 text-xl font-semibold p-2">
+                    {item.title}
+                  </h3>
 
-                  <p className="mt-3 text-sm leading-6 text-slate-600">
+                  <p className="mt-3 text-sm leading-6 text-slate-600 p-2">
                     {item.description}
                   </p>
 
                   <Link
                     href={`/services/${item.slug}`}
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition group-hover:gap-3"
+                    className="mt-6 inline-flex items-center gap-2 p-2 text-sm font-semibold text-blue-600 transition group-hover:gap-3"
                   >
                     Learn More
                     <ArrowRight size={16} />

@@ -8,62 +8,63 @@ import {
   ShieldCheck,
   Building2,
 } from "lucide-react";
+import Image from "next/image";
 
 export const services = [
   {
     title: "Infrastructure Solutions",
     description:
       "Build reliable IT infrastructure with enterprise-grade servers, networking, storage, virtualization, and scalable deployment solutions.",
-    icon: Server,
+    image: "/services/infra.png",
     href: "/services/infrastructure-solutions",
   },
   {
     title: "Cloud Solutions",
     description:
       "Accelerate your digital transformation with secure, scalable cloud infrastructure, migration, backup, and managed cloud services.",
-    icon: Cloud,
+    image: "/services/cloud.png",
     href: "/services/cloud-solutions",
   },
   {
     title: "Managed Services",
     description:
       "24×7 infrastructure monitoring, proactive maintenance, technical support, performance optimization, and managed IT operations.",
-    icon: Settings,
+    image: "/services/managed.png",
     href: "/services/managed-services",
   },
   {
     title: "Staffing Solutions",
     description:
       "Connect your business with experienced IT professionals for contract staffing, project-based hiring, and long-term workforce solutions.",
-    icon: Users,
+    image: "/services/staffing.png",
     href: "/services/staffing-solutions",
   },
   {
     title: "Annual Maintenance Contract",
     description:
       "Comprehensive AMC services covering preventive maintenance, system health checks, hardware support, and priority technical assistance.",
-    icon: Wrench,
+    image: "/services/anual.png",
     href: "/services/annual-maintenance-contract",
   },
   {
     title: "Business Analytics",
     description:
       "Transform business data into actionable insights through dashboards, reporting, analytics, and intelligent decision-making tools.",
-    icon: BarChart3,
+    image: "/services/business.png",
     href: "/services/business-analytics",
   },
   {
     title: "Security Solutions",
     description:
       "Protect your business with enterprise cybersecurity, network security, endpoint protection, backup strategies, and threat management.",
-    icon: ShieldCheck,
+    image: "/services/security.png",
     href: "/services/security-solutions",
   },
   {
     title: "ERP & Business Applications",
     description:
       "Streamline operations with customized ERP solutions and business applications that improve automation, collaboration, and efficiency.",
-    icon: Building2,
+    image: "/services/erp.png",
     href: "/services/erp-business-applications",
   },
 ];
@@ -87,23 +88,30 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-          {services.map(({ title, description, icon: Icon }) => (
+        <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-2">
+          {services.map(({ title, description, image }) => (
             <article
               key={title}
-              className="group rounded-md border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
+              className="group rounded-md border border-slate-200 bg-white  shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-md bg-blue-50 text-blue-600 transition group-hover:bg-blue-600 group-hover:text-white">
-                <Icon size={26} strokeWidth={1.8} />
+              <div className="flex  items-center justify-center ">
+                <Image
+                  src={image}
+                  height={800}
+                  width={800}
+                  alt={`${title} image`}
+                />
               </div>
 
-              <h3 className="mt-6 text-xl font-semibold text-slate-950">
+              <h3 className="mt-6 text-xl font-semibold text-slate-950 px-2">
                 {title}
               </h3>
 
-              <p className="mt-3 leading-7 text-slate-600">{description}</p>
+              <p className="mt-3 leading-7 text-slate-600 px-2">
+                {description}
+              </p>
 
-              <button className="mt-6 text-sm font-semibold text-blue-600 transition hover:text-blue-800">
+              <button className="mt-6 text-sm font-semibold text-blue-600 transition hover:text-blue-800 px-2">
                 Learn more →
               </button>
             </article>
