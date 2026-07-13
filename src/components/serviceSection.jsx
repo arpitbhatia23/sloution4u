@@ -9,6 +9,7 @@ import {
   Building2,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export const services = [
   {
@@ -89,7 +90,7 @@ export default function ServicesSection() {
         </div>
 
         <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-2">
-          {services.map(({ title, description, image }) => (
+          {services.map(({ title, description, image, href }) => (
             <article
               key={title}
               className="group rounded-md border border-slate-200 bg-white  shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
@@ -111,9 +112,13 @@ export default function ServicesSection() {
                 {description}
               </p>
 
-              <button className="mt-6 text-sm font-semibold text-blue-600 transition hover:text-blue-800 px-2 py-4">
+              <Link
+                href={href}
+                aria-label={`${title} link`}
+                className="mt-6 text-sm font-semibold text-blue-600 transition hover:text-blue-800 px-2 py-4"
+              >
                 Learn more →
-              </button>
+              </Link>
             </article>
           ))}
         </div>
