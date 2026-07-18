@@ -1,13 +1,5 @@
 import Link from "next/link";
-import {
-  ArrowRight,
-  CheckCircle2,
-  Cloud,
-  DatabaseBackup,
-  ShieldCheck,
-  Zap,
-} from "lucide-react";
-import { GlobeDemo } from "./Globedemo";
+import { ArrowRight, CheckCircle2, Zap } from "lucide-react";
 
 const features = [
   "Enterprise cloud solutions",
@@ -21,9 +13,19 @@ export default function HeroSection() {
     <section className="relative overflow-hidden bg-white">
       {/* Background decoration */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-blue-100 blur-3xl" />
-        <div className="absolute -bottom-40 left-0 h-96 w-96 rounded-full bg-cyan-100 blur-3xl" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-size[48px_48px] opacity-30" />
+        <div className="absolute inset-0 overflow-hidden">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="w-full h-full object-cover object-center"
+          >
+            <source src="/hero.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div className="absolute inset-0 bg-black/25" />{" "}
       </div>
 
       <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-16 sm:px-6 lg:px-8 lg:pb-28 lg:pt-24">
@@ -35,14 +37,12 @@ export default function HeroSection() {
               Cloud, Security & Managed IT Solutions
             </div>
 
-            <h1 className="mt-6 max-w-3xl text-lg font-bold tracking-tight text-slate-950 sm:text-xl lg:text-3xl lg:leading-[1.08]">
+            <h1 className="mt-6 max-w-3xl text-lg font-bold tracking-tight text-white sm:text-xl lg:text-3xl lg:leading-[1.08]">
               Technology that helps your business
-              <span className="block text-blue-600">
-                move forward securely.
-              </span>
+              <span className="block text-white">move forward securely.</span>
             </h1>
 
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-white">
               Solution4U delivers enterprise cloud infrastructure, managed cyber
               security, backup and recovery, and modern IT solutions designed to
               reduce complexity, control costs, and support business growth.
@@ -69,17 +69,17 @@ export default function HeroSection() {
               {features.map((feature) => (
                 <div
                   key={feature}
-                  className="flex items-center gap-3 text-sm font-medium text-slate-700"
+                  className="flex items-center gap-3 text-sm font-medium text-white"
                 >
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-blue-600" />
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-white" />
                   {feature}
                 </div>
               ))}
             </div>
           </div>
-          <div className="hidden sm:block">
+          {/* <div className="hidden sm:block">
             <GlobeDemo />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
