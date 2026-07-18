@@ -186,10 +186,16 @@ export default function Navbar() {
                     {service.title}
                   </Link>
                 ))}
+                <Link
+                  href="/services"
+                  className="col-span-2 mt-1 rounded-sm bg-slate-950 px-4 py-2 text-center text-sm  text-white transition hover:bg-blue-700"
+                >
+                  View All Solutions
+                </Link>
               </div>
             )}
 
-            <MobileLink href="/blog" label="blogs" />
+            <MobileLink href="/blogs" label="blogs" />
             <MobileLink href="/contact" label="Contact" />
 
             <Link

@@ -223,7 +223,7 @@ export default function ServicesPage() {
           className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-black/25" />
-        <div className="relative mx-auto max-w-7xl px-6">
+        <div className="relative mx-auto max-w-7xl px-6 py-8">
           <div className="max-w-4xl">
             <p className="text-sm font-semibold uppercase tracking-[0.35em] text-white">
               Products & Services
